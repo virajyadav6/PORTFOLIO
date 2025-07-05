@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const text = "Hello, I'm Rohan Chimbaikar";
+  const text = "Hello, I'm Viraj Yadav";
   const header = document.querySelector("header h1");
   header.innerText = "";
   let i = 0;
