@@ -1,0 +1,404 @@
+/* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f7fafc;
+  color: #1a202c;
+  line-height: 1.6;
+  padding-top: 60px;
+}
+
+/* Navbar */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #2575fc;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+nav.scrolled {
+  background: #1a4ecc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+nav .logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffcc00;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+  margin-left: 20px;
+}
+
+nav .right-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  padding: 4rem 1rem;
+  text-align: center;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  white-space: pre-wrap;
+}
+
+header p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Main Content */
+main {
+  max-width: 960px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  margin-bottom: 4rem;
+  scroll-margin-top: 80px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Headings */
+h2 {
+  font-size: 2rem;
+  color: #2b6cb0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #2575fc;
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+
+/* Paragraphs */
+.about p,
+.projects p,
+.skills p {
+  max-width: 700px;
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+/* Skills */
+ul.skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+ul.skills-list li {
+  background: #3182ce;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Projects */
+.projects-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.projects-list > li {
+  margin-bottom: 2rem;
+}
+
+.projects-list a {
+  color: #2c5282;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.projects-list a:hover {
+  text-decoration: underline;
+}
+
+.projects-list ul {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  padding-left: 1rem;
+  color: #4a5568;
+  list-style-type: disc;
+}
+
+/* Education */
+.education ul {
+  margin-top: 1rem;
+  margin-left: 1.2rem;
+  padding-left: 1rem;
+  color: #4a5568;
+  list-style-type: disc;
+  font-size: 1rem;
+  max-width: 700px;
+}
+
+.education ul li {
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #718096;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+  background: #edf2f7;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: #1a202c;
+  color: #f7fafc;
+}
+
+body.dark-mode nav {
+  background: #2d3748;
+}
+body.dark-mode #navMenu {
+  background: #2d3748;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode header {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+}
+
+body.dark-mode h2::after {
+  background-color: #ffcc00;
+}
+
+body.dark-mode a {
+  color: #90cdf4;
+}
+
+body.dark-mode footer {
+  background: #2d3748;
+  color: #e2e8f0;
+  border-top: 1px solid #4a5568;
+}
+
+body.dark-mode .about p,
+body.dark-mode .projects-list ul,
+body.dark-mode .skills-list li,
+body.dark-mode .education ul li {
+  color: #ffffff;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .theme-toggle {
+    margin-left: 0;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  main {
+    padding: 0 1rem;
+    margin: 2rem auto;
+  }
+
+  .projects-list ul {
+    margin-left: 0;
+    padding-left: 1rem;
+  }
+
+  ul.skills-list {
+    flex-direction: column;
+  }
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 15px 30px;
+  background-color: #2575fc;
+  color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav .logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+
+.theme-toggle {
+  font-size: 1.3rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+nav.scrolled {
+  background-color: #1a4ecc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    background-color: #2575fc;
+    padding-top: 10px;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    width: 100%;
+    padding-left: 0;
+    gap: 10px;
+  }
+
+  .nav-menu ul li {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .theme-toggle {
+    align-self: center;
+    margin: 10px 0;
+  }
+}
